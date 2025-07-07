@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles1.css" />
+  <title>Contact Page</title>
+</head>
+<body>
+  <div class="contact">
+    <div class="contact-container">
+      <div class="contact-box">
+        <div class="contact-details">
+          <img src= "profile.png" alt="Profile" />
+          <h1>Ashish Magar</h1>
+          <p>ashishmagarr7@gmail.com</p>
+          <p>INDIA</p>
+        </div>
+
+        <div class="contact-form">
+  <form id="contact-form">
+    <span>Contact Me</span>
+    <input type="text" name="name" class="form-input" placeholder="Full Name" required />
+<input type="email" name="email" class="form-input" placeholder="Email" required />
+<input type="text" name="title" class="form-input" placeholder="Subject" required />
+<textarea name="message" class="form-input" placeholder="Enter Message" required></textarea>
+
+    <input type="submit" value="Send" />
+  </form>
+</div>
+
+<!-- EmailJS CDN -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init("8tPgKrp6ruwDEQomD"); 
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    emailjs.sendForm("service_0m4vtz3", "template_4if42jf", this)
+      .then(function () {
+        alert("Email sent successfully!");
+        document.getElementById("contact-form").reset();
+      }, function (error) {
+        alert("Failed to send email. Please try again.\n" + JSON.stringify(error));
+      });
+  });
+</script>
+</body>
+</html>
