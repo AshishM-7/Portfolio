@@ -123,57 +123,46 @@ form textarea{
 }
 
 
-/* @media (width < 750px){
-    nav .checkbox{
-        display:block;
-    }
-} */
-@media only screen and (max-width: 1000px) {
-    .contact-box {
-        flex-direction: column;
-    }
 
-    .contact-details, .contact-form {
-        width: 100%;
-        border-radius: 0;
-    }
-
-    .contact-details {
-        border-radius: 10px 10px 0 0;
-        padding: 1.5rem;
-    }
-
-    .contact-form {
-        border-radius: 0 0 10px 10px;
-        padding: 2rem 1rem;
-    }
-
-    form input[type="text"],
-    form input[type="email"],
-    form textarea,
-    form input[type="submit"] {
-        width: 90%;
+@media only screen and (max-width:1000px){
+    .contact-box{
+        padding:20px;
     }
 }
 
-/* Mobile view adjustments
-@media only screen and (max-width: 600px) {
-    .contact-details {
-        display: none;
+@media only screen and (max-width:800px){
+    form input[type="text"]{
+        width:70%;
     }
 
-    .contact-form {
-        border-radius: 10px;
+    form textarea{
+        width:70%;
     }
 
-    form input[type="text"],
-    form input[type="email"],
-    form textarea,
-    form input[type="submit"] {
-        width: 100%;
+    form input[type="submit"]{
+        width:70%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .contact-details{
+        display:none;
+    }
+    .contact-form{
+        width:100%;
     }
 
-    .contact-form form span {
-        font-size: 1.75rem;
+    form input[type="text"]{
+        width:60%;
     }
-} */
+
+    form textarea{
+        width:60%;
+    }
+
+    form input[type="submit"]{
+        width:60%;
+    }
+
+
+} 
